@@ -10,8 +10,8 @@ type Props = {
 
 type State = {
   rowSize: number;
-  width: number;
-  height: number;
+//   width: number;
+//   height: number;
   count: number;
   mouseXY: Array<number>;
   mouseDelta: Array<number>;
