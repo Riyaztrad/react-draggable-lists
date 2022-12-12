@@ -3,8 +3,8 @@ import { Motion, spring } from 'react-motion';
 
 type Props = {
   rowSize: number;
-  width: number;
-  height: number;
+//   width: number;
+//   height: number;
   children: React.ReactNode;
 };
 
