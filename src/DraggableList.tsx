@@ -3,15 +3,15 @@ import { Motion, spring } from 'react-motion';
 
 type Props = {
   rowSize: number;
-//   width: number;
-//   height: number;
+  width: number;
+  height: number;
   children: React.ReactNode;
 };
 
 type State = {
   rowSize: number;
-//   width: number;
-//   height: number;
+  width: number;
+  height: number;
   count: number;
   mouseXY: Array<number>;
   mouseDelta: Array<number>;
@@ -203,8 +203,8 @@ class DraggableList extends React.Component<Props, State> {
                   }}
                   style={{
 //                     position: 'absolute',
-//                     width,
-//                     height,
+                    width,
+                    height,
                     transform: `translate3d(${translateX}px, ${translateY}px, 0) scale(${scale})`,
 //                     zIndex: key === lastPress ? 99 : visualPosition
                   }}
