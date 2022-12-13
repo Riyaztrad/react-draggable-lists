@@ -14,7 +14,6 @@ type State = {
   width: number;
   height: number;
   count: number;
-  onOrderChange:any;
   mouseXY: Array<number>;
   mouseDelta: Array<number>;
   lastPress: number;
