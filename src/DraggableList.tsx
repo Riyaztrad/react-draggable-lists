@@ -5,7 +5,7 @@ type Props = {
   rowSize: number;
   width: number;
   height: number;
-  onOrderChange:(data:any)=>void;
+  onOrderChange:any;
   children: React.ReactNode;
 };
 
@@ -14,7 +14,7 @@ type State = {
   width: number;
   height: number;
   count: number;
-  onOrderChange:(data:any)=>void;
+  onOrderChange:any;
   mouseXY: Array<number>;
   mouseDelta: Array<number>;
   lastPress: number;
