@@ -150,8 +150,8 @@ class DraggableList extends React.Component<Props, State> {
 
   render() {
     const {
-      // width,
-      // height,
+      width,
+      height,
       count,
       rowSize,
       orders,
