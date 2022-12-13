@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { Motion, spring } from 'react-motion';
+import * as React from "react";
+import { Motion, spring } from "react-motion";
 
 type Props = {
   rowSize: number;
@@ -57,7 +57,7 @@ class DraggableList extends React.Component<Props, State> {
       orders: Array.from({ length: count }, (_, i) => {
         return i;
       }),
-      children: newChildren
+      children: newChildren,
     };
   }
 
@@ -75,7 +75,7 @@ class DraggableList extends React.Component<Props, State> {
       isPressed: true,
       isMoved: false,
       mouseDelta: [pageX - pressX, pageY - pressY],
-      mouseXY: [pressX, pressY]
+      mouseXY: [pressX, pressY],
     });
 
     e.preventDefault();
@@ -100,7 +100,7 @@ class DraggableList extends React.Component<Props, State> {
       rowSize,
       lastPress,
       isPressed,
-      mouseDelta: [dx, dy]
+      mouseDelta: [dx, dy],
     } = this.state;
 
     if (isPressed) {
@@ -108,24 +108,25 @@ class DraggableList extends React.Component<Props, State> {
       const col = clamp({
         n: Math.floor(mouseXY[0] / width),
         min: 0,
-        max: rowSize - 1
+        max: rowSize - 1,
       });
       const row = clamp({
         n: Math.floor(mouseXY[1] / height),
         min: 0,
-        max: Math.floor(count / rowSize)
+        max: Math.floor(count / rowSize),
       });
       const index = row * rowSize + col;
       const newOrders = reinsert({
         arr: orders,
         from: orders.indexOf(lastPress),
-        to: index
+        to: index,
       });
 
+      console.log("newOrders",newOrders)
       this.setState({
         mouseXY,
         isMoved: Math.abs(mouseXY[0]) > 10 || Math.abs(mouseXY[1]) > 10,
-        orders: newOrders
+        orders: newOrders,
       });
     }
   };
@@ -133,7 +134,7 @@ class DraggableList extends React.Component<Props, State> {
   handleMouseUp = () => {
     this.setState({
       isPressed: false,
-      mouseDelta: [0, 0]
+      mouseDelta: [0, 0],
     });
   };
 
@@ -149,20 +150,20 @@ class DraggableList extends React.Component<Props, State> {
 
   render() {
     const {
-      width,
-      height,
+      // width,
+      // height,
       count,
       rowSize,
       orders,
       lastPress,
       isPressed,
       mouseXY,
-      children
+      children,
     } = this.state;
     return (
       <div
         style={{
-          height: height * Math.ceil(count / rowSize)
+          height: height * Math.ceil(count / rowSize),
         }}
       >
         {orders.map((_, key) => {
@@ -175,38 +176,38 @@ class DraggableList extends React.Component<Props, State> {
             style = {
               translateX: x,
               translateY: y,
-              scale: spring(1.2)
+              scale: spring(1.2),
             };
           } else {
             [x, y] = this.getLayout()[visualPosition];
             style = {
               translateX: spring(x),
               translateY: spring(y),
-              scale: spring(1)
+              scale: spring(1),
             };
           }
           return (
             <Motion key={key} style={style}>
               {({ translateX, translateY, scale }) => (
                 <div
-                  onMouseDown={e => {
+                  onMouseDown={(e) => {
                     this.handleMouseDown({ key, pressLocation: [x, y], e });
                   }}
-                  onClickCapture={e => {
+                  onClickCapture={(e) => {
                     this.handleClick(e);
                   }}
-                  onMouseMove={e => {
+                  onMouseMove={(e) => {
                     this.handleMouseMove(e);
                   }}
                   onMouseUp={() => {
                     this.handleMouseUp();
                   }}
                   style={{
-//                     position: 'absolute',
-//                     width,
-//                     height,
+                    position: 'absolute',
+                    width,
+                    height,
                     transform: `translate3d(${translateX}px, ${translateY}px, 0) scale(${scale})`,
-//                     zIndex: key === lastPress ? 99 : visualPosition
+                    zIndex: key === lastPress ? 99 : visualPosition
                   }}
                 >
                   {children[key]}
