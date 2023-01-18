@@ -165,6 +165,7 @@ class DraggableList extends React.Component<Props, State> {
       <div
         style={{
           height: height * Math.ceil(count / rowSize),
+          position: 'absolute'
         }}
       >
         {orders.map((_, key) => {
@@ -204,11 +205,11 @@ class DraggableList extends React.Component<Props, State> {
                     this.handleMouseUp();
                   }}
                   style={{
-                    position: 'absolute',
-                    width,
-                    height,
+                    // position: 'absolute',
+                    width: '100%',
+                    // height,
                     transform: `translate3d(${translateX}px, ${translateY}px, 0) scale(${scale})`,
-                    zIndex: key === lastPress ? 99 : visualPosition
+                    // zIndex: key === lastPress ? 99 : visualPosition
                   }}
                 >
                   {children[key]}
