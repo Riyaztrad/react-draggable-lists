@@ -151,7 +151,6 @@ class DraggableList extends React.Component<Props, State> {
 
   render() {
     const {
-      width,
       height,
       count,
       rowSize,
@@ -206,7 +205,7 @@ class DraggableList extends React.Component<Props, State> {
                   }}
                   style={{
                     // position: 'absolute',
-                    width: '100% !important',
+                    width: '100%',
                     // height,
                     transform: `translate3d(${translateX}px, ${translateY}px, 0) scale(${scale})`,
                     // zIndex: key === lastPress ? 99 : visualPosition
