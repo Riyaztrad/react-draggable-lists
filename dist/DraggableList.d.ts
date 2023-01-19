@@ -1,9 +1,8 @@
-import * as React from "react";
+import * as React from 'react';
 declare type Props = {
     rowSize: number;
     width: number;
     height: number;
-    onOrderChange: any;
     children: React.ReactNode;
 };
 declare type State = {
