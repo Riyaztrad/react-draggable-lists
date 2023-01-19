@@ -5,6 +5,7 @@ type Props = {
   rowSize: number;
   width: number;
   height: number;
+  onOrderChange: any;
   children: React.ReactNode;
 };
 
@@ -116,11 +117,13 @@ class DraggableList extends React.Component<Props, State> {
         max: Math.floor(count / rowSize),
       });
       const index = row * rowSize + col;
+
       const newOrders = reinsert({
         arr: orders,
         from: orders.indexOf(lastPress),
         to: index,
       });
+      this.props.onOrderChange(newOrders);
 
       this.setState({
         mouseXY,

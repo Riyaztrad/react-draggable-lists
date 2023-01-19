@@ -1680,6 +1680,7 @@ var DraggableList = /** @class */ (function (_super) {
                     from: orders.indexOf(lastPress),
                     to: index,
                 });
+                _this.props.onOrderChange(newOrders);
                 _this.setState({
                     mouseXY: mouseXY,
                     isMoved: Math.abs(mouseXY[0]) > 10 || Math.abs(mouseXY[1]) > 10,

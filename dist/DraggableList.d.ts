@@ -3,6 +3,7 @@ declare type Props = {
     rowSize: number;
     width: number;
     height: number;
+    onOrderChange: any;
     children: React.ReactNode;
 };
 declare type State = {
