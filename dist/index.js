@@ -1755,7 +1755,7 @@ var DraggableList = /** @class */ (function (_super) {
                     scale: reactMotion_4(1),
                 };
             }
-            return (React.createElement(reactMotion_1, { key: key, style: style }, function (_a) {
+            return (React.createElement(reactMotion_1, { key: 'elemetn123445' + key, style: style }, function (_a) {
                 var translateX = _a.translateX, translateY = _a.translateY, scale = _a.scale;
                 return (React.createElement("div", { onMouseDown: function (e) {
                         _this.handleMouseDown({ key: key, pressLocation: [x, y], e: e });

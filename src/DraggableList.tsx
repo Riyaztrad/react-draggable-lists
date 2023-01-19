@@ -189,7 +189,7 @@ class DraggableList extends React.Component<Props, State> {
             };
           }
           return (
-            <Motion key={key} style={style}>
+            <Motion key={'elemetn123445'+key} style={style}>
               {({ translateX, translateY, scale }) => (
                 <div
                   onMouseDown={(e) => {
