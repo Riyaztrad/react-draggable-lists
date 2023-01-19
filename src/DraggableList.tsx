@@ -162,6 +162,7 @@ class DraggableList extends React.Component<Props, State> {
       <div
         style={{
           height: height * Math.ceil(count / rowSize),
+          position: "relative",
         }}
       >
         {orders.map((_, key) => {

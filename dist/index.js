@@ -1731,6 +1731,7 @@ var DraggableList = /** @class */ (function (_super) {
         var _a = this.state, height = _a.height, count = _a.count, rowSize = _a.rowSize, orders = _a.orders, lastPress = _a.lastPress, isPressed = _a.isPressed, mouseXY = _a.mouseXY, children = _a.children;
         return (React.createElement("div", { style: {
                 height: height * Math.ceil(count / rowSize),
+                position: "relative",
             } }, orders.map(function (_, key) {
             var _a;
             var style;
