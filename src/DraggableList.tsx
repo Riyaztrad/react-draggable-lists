@@ -169,6 +169,7 @@ class DraggableList extends React.Component<Props, State> {
         }}
       >
         {orders.map((_, key) => {
+          console.log({key})
           let style;
           let x: number;
           let y: number;

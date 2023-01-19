@@ -1730,6 +1730,7 @@ var DraggableList = /** @class */ (function (_super) {
                 position: "relative",
             } }, orders.map(function (_, key) {
             var _a;
+            console.log({ key: key });
             var style;
             var x;
             var y;
