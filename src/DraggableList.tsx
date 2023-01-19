@@ -87,7 +87,7 @@ class DraggableList extends React.Component<Props, State> {
 
     if (isMoved) {
       e.preventDefault();
-      e.stopPropagation();
+      // e.stopPropagation();
     }
   };
 
