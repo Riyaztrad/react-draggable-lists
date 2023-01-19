@@ -1653,7 +1653,7 @@ var DraggableList = /** @class */ (function (_super) {
                 isPressed: true,
                 isMoved: false,
                 mouseDelta: [pageX - pressX, pageY - pressY],
-                mouseXY: [pressX, pressY]
+                mouseXY: [pressX, pressY],
             });
             e.preventDefault();
         };
@@ -1672,30 +1672,30 @@ var DraggableList = /** @class */ (function (_super) {
                 var col = clamp({
                     n: Math.floor(mouseXY[0] / width),
                     min: 0,
-                    max: rowSize - 1
+                    max: rowSize - 1,
                 });
                 var row = clamp({
                     n: Math.floor(mouseXY[1] / height),
                     min: 0,
-                    max: Math.floor(count / rowSize)
+                    max: Math.floor(count / rowSize),
                 });
                 var index = row * rowSize + col;
                 var newOrders = reinsert({
                     arr: orders,
                     from: orders.indexOf(lastPress),
-                    to: index
+                    to: index,
                 });
                 _this.setState({
                     mouseXY: mouseXY,
                     isMoved: Math.abs(mouseXY[0]) > 10 || Math.abs(mouseXY[1]) > 10,
-                    orders: newOrders
+                    orders: newOrders,
                 });
             }
         };
         _this.handleMouseUp = function () {
             _this.setState({
                 isPressed: false,
-                mouseDelta: [0, 0]
+                mouseDelta: [0, 0],
             });
         };
         _this.getLayout = function () {
@@ -1722,15 +1722,15 @@ var DraggableList = /** @class */ (function (_super) {
             orders: Array.from({ length: count }, function (_, i) {
                 return i;
             }),
-            children: newChildren
+            children: newChildren,
         };
         return _this;
     }
     DraggableList.prototype.render = function () {
         var _this = this;
-        var _a = this.state, width = _a.width, height = _a.height, count = _a.count, rowSize = _a.rowSize, orders = _a.orders, lastPress = _a.lastPress, isPressed = _a.isPressed, mouseXY = _a.mouseXY, children = _a.children;
+        var _a = this.state, height = _a.height, count = _a.count, rowSize = _a.rowSize, orders = _a.orders, lastPress = _a.lastPress, isPressed = _a.isPressed, mouseXY = _a.mouseXY, children = _a.children;
         return (React.createElement("div", { style: {
-                height: height * Math.ceil(count / rowSize)
+                height: height * Math.ceil(count / rowSize),
             } }, orders.map(function (_, key) {
             var _a;
             var style;
@@ -1742,7 +1742,7 @@ var DraggableList = /** @class */ (function (_super) {
                 style = {
                     translateX: x,
                     translateY: y,
-                    scale: reactMotion_4(1.2)
+                    scale: reactMotion_4(1.2),
                 };
             }
             else {
@@ -1750,7 +1750,7 @@ var DraggableList = /** @class */ (function (_super) {
                 style = {
                     translateX: reactMotion_4(x),
                     translateY: reactMotion_4(y),
-                    scale: reactMotion_4(1)
+                    scale: reactMotion_4(1),
                 };
             }
             return (React.createElement(reactMotion_1, { key: key, style: style }, function (_a) {
@@ -1764,11 +1764,11 @@ var DraggableList = /** @class */ (function (_super) {
                     }, onMouseUp: function () {
                         _this.handleMouseUp();
                     }, style: {
-                        position: 'absolute',
-                        width: width,
+                        position: "absolute",
+                        width: "100%",
                         height: height,
                         transform: "translate3d(" + translateX + "px, " + translateY + "px, 0) scale(" + scale + ")",
-                        zIndex: key === lastPress ? 99 : visualPosition
+                        zIndex: key === lastPress ? 99 : visualPosition,
                     } }, children[key]));
             }));
         })));
