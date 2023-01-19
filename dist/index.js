@@ -1661,7 +1661,7 @@ var DraggableList = /** @class */ (function (_super) {
             var isMoved = _this.state.isMoved;
             if (isMoved) {
                 e.preventDefault();
-                e.stopPropagation();
+                // e.stopPropagation();
             }
         };
         _this.handleMouseMove = function (e) {
